@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://bxaarhvmjfjxf"]
+
+[ext_resource type="Script" uid="uid://dn17empadvu83" path="res://collectables1.gd" id="1_4bbs1"]
+[ext_resource type="Texture2D" uid="uid://bvt52j0m2kmcc" path="res://Screenshot 2026-05-03 014534.png" id="1_npbb8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bbs1"]
+atlas = ExtResource("1_npbb8")
+region = Rect2(0, 0, 319, 406)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47sf6"]
+atlas = ExtResource("1_npbb8")
+region = Rect2(319, 0, 319, 406)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_it3pk"]
+atlas = ExtResource("1_npbb8")
+region = Rect2(638, 0, 319, 406)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kxm6"]
+atlas = ExtResource("1_npbb8")
+region = Rect2(957, 0, 319, 406)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14sgv"]
+atlas = ExtResource("1_npbb8")
+region = Rect2(957, 406, 319, 406)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmpvb"]
+atlas = ExtResource("1_npbb8")
+region = Rect2(638, 406, 319, 406)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utrs1"]
+atlas = ExtResource("1_npbb8")
+region = Rect2(319, 406, 319, 406)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xy3y"]
+atlas = ExtResource("1_npbb8")
+region = Rect2(0, 406, 319, 406)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gig7i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bbs1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47sf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_it3pk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kxm6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14sgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmpvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utrs1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xy3y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f1av6"]
+radius = 35.902645
+
+[node name="collectables" type="Area2D" unique_id=1456396682]
+script = ExtResource("1_4bbs1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1246648643]
+texture_filter = 1
+position = Vector2(393.00006, 246.00003)
+scale = Vector2(0.17789969, 0.18165024)
+sprite_frames = SubResource("SpriteFrames_gig7i")
+frame_progress = 0.40138918
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=982997840]
+position = Vector2(387, 253)
+shape = SubResource("CircleShape2D_f1av6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
